@@ -1,0 +1,374 @@
+@import "tailwindcss";
+
+
+@keyframes zoomHero {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+
+/* Hero animations */
+
+.hero-image {
+
+    animation: zoomHero 12s ease-in-out infinite alternate;
+
+}
+
+
+.hero-fade {
+
+    animation: fadeIn 1.5s ease forwards;
+
+}
+
+
+.hero-content {
+
+    animation: fadeUp 1s ease forwards;
+
+}
+
+
+.hero-delay-1 {
+
+    opacity: 0;
+    animation: fadeUp 1s ease .3s forwards;
+
+}
+
+
+.hero-delay-2 {
+
+    opacity: 0;
+    animation: fadeUp 1s ease .6s forwards;
+
+}
+
+
+.hero-delay-3 {
+
+    opacity: 0;
+    animation: fadeUp 1s ease .9s forwards;
+
+}
+
+.scroll-reveal {
+    animation: scrollReveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+@keyframes scrollReveal {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.signature-slider-track {
+    display: flex;
+    gap: 32px;
+    width: max-content;
+    animation: jewellerySlider 15s linear infinite;
+}
+
+/* slider */
+
+.signature-slider-track {
+    display: flex;
+    gap: 32px;
+    width: max-content;
+    animation: jewellerySlider 25s linear infinite;
+}
+
+.signature-product {
+    width: 180px;
+    flex: 0 0 320px;
+}
+
+@keyframes jewellerySlider {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+/* =========================================================
+   TESTIMONIAL SLIDER
+========================================================= */
+
+.testimonial-slider {
+    position: relative;
+    overflow: hidden;
+    min-height: 350px;
+}
+
+
+/* =========================================================
+   TESTIMONIAL SLIDES
+========================================================= */
+
+.testimonial-slide {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    opacity: 0;
+}
+
+
+/* =========================================================
+   SLIDE 1
+========================================================= */
+
+.testimonial-slide-1 {
+
+    animation:
+        testimonialSlideOne
+        10s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* =========================================================
+   SLIDE 2
+========================================================= */
+
+.testimonial-slide-2 {
+
+    animation:
+        testimonialSlideTwo
+        10s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* =========================================================
+   TESTIMONIAL 1 ANIMATION
+========================================================= */
+
+@keyframes testimonialSlideOne {
+
+    /* شروع */
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+
+    }
+
+
+    /* مدتی روی صفحه بماند */
+
+    40% {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+
+    }
+
+
+    /* خارج شدن به سمت چپ */
+
+    50% {
+
+        opacity: 0;
+
+        transform:
+            translateX(-100%);
+
+    }
+
+
+    /* خارج از صفحه */
+
+    90% {
+
+        opacity: 0;
+
+        transform:
+            translateX(-100%);
+
+    }
+
+
+    /* برگشت برای شروع دور بعد */
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   TESTIMONIAL 2 ANIMATION
+========================================================= */
+
+@keyframes testimonialSlideTwo {
+
+    /* ابتدا خارج از صفحه سمت راست */
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateX(100%);
+
+    }
+
+
+    /* هنوز بیرون */
+
+    40% {
+
+        opacity: 0;
+
+        transform:
+            translateX(100%);
+
+    }
+
+
+    /* ورود از سمت راست */
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+
+    }
+
+
+    /* روی صفحه بماند */
+
+    90% {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+
+    }
+
+
+    /* خروج */
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translateX(100%);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .testimonial-slider {
+
+        min-height: 430px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .testimonial-slide {
+
+        animation: none;
+
+    }
+
+    .testimonial-slide-1 {
+
+        opacity: 1;
+
+        transform: translateX(0);
+
+    }
+
+    .testimonial-slide-2 {
+
+        opacity: 0;
+
+    }
+
+}
