@@ -1,8 +1,5 @@
 # 💎 Cignet Jewelry
 
-https://setare-heydarvand-web.github.io/cignet-jewelry/
-
-<img width="1898" height="902" alt="Screenshot 2026-08-28 232319" src="https://github.com/user-attachments/assets/d272820d-097c-4af0-957e-169f0daccbf8" />
 
 
 ### ✨ Modern Jewelry E-Commerce Website
